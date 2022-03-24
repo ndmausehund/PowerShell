@@ -1,0 +1,7 @@
+$RemoteServer = Read-Host "Enter the name of the server for which to restart the VSS Writer"
+
+Get-Service -ComputerName $RemoteServer -Name 'SQL Server VSS Writer'| Stop-Service -Verbose
+Get-Service -ComputerName $RemoteServer -Name 'SQL Server VSS Writer'| Start-Service -Verbose
+Get-Service -ComputerName $RemoteServer -Name 'SQL Server VSS Writer' #Shows Run Status
+
+Read-Host -Prompt "Press Enter to exit"

@@ -17,7 +17,7 @@ Disable-ADAccount -Identity $Samaccountname
 Write-Host 'AD account now disabled'
 
 #since get-msoluser does not use samaccount name we will have to create a new variable to add @morganservices.com to create a upn
-$upn = $Samaccountname + '@morganservices.com'
+$upn = $Samaccountname + '@contoso.com'
 
 #This retrieves the active licenses by the upn and loops through them in order to set each of them to inactive
 (Get-MsolUser -UserPrincipalName $upn).licenses.AccountSkuID | foreach {

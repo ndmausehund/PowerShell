@@ -1,0 +1,3 @@
+# 'SAM' is the header from the CSV
+
+Import-CSV C:\Reports\users.csv | ForEach-Object {Add-ADGroupMember -Identity “group name” -Members $_.’SAM’}

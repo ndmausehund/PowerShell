@@ -1,0 +1,1 @@
+Get-ADGroupMember -Identity "Group Users" | select SamAccountName | Export-Csv c:\reports\groupusers.csv
